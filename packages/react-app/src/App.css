@@ -1,0 +1,128 @@
+.App {
+  text-align: center;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+.AppScroller {
+  flex: 1;
+  overflow-y: auto;
+  padding-bottom: 10rem;
+}
+.AppCenteredCol {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hud {
+  --glassColor: hsla(209deg, 100%, 55%, 0.1);
+  background-color: var(--glassColor);
+  backdrop-filter: blur(2px);
+  border: 1px solid hsla(0deg, 0%, 50%, 0.2);
+}
+
+.hudBottom {
+  border-left: none;
+}
+
+.hudTop {
+  border-top: none;
+  border-right: none;
+}
+
+.hoverableLight {
+  transition: all 0.1s ease-out;
+  cursor: pointer;
+}
+.hoverableLight:hover {
+  background-color: hsla(209deg, 100%, 92%, 0.1);
+}
+
+/* GALLERY CARDS */
+
+.galleryCard {
+  padding: 2rem !important;
+}
+
+.galleryCard .ant-card-body {
+  /* background-color: hsla(208, 100%, 97%, 0.7); */
+}
+
+.galleryCard .ant-card-bordered {
+  border: 1px solid hsl(0, 0%, 90%);
+  transition: all 0.3s ease-out;
+}
+.galleryCard .ant-card-body {
+  transition: box-shadow 0.3s ease-out;
+}
+.galleryCard .ant-card-bordered:hover {
+  border: 1px solid hsl(0, 0%, 75%);
+}
+.galleryCard .ant-card-bordered:hover .ant-card-body {
+  box-shadow: 0 0 16px 4px white inset;
+}
+
+.nftImageBack {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  padding: 1rem;
+  border: 1px solid #ddd;
+  background-color: #fafafa;
+  opacity: 0.96;
+  backdrop-filter: blur(12px);
+}
+.nftImageBack p {
+  margin: 0;
+}
+
+.imgWrapper {
+  -webkit-perspective: 800px;
+  perspective: 800px;
+  -moz-perspective: 800px;
+  position: relative;
+  --easing: cubic-bezier(0.86, 0.01, 0.14, 1.01);
+  --duration: 0.3s;
+  box-shadow: 0 0 4px 4px hsla(0, 0%, 0%, 0.05);
+}
+
+.nftImage {
+  transition: all var(--duration) var(--easing);
+  -webkit-transition: all var(--duration) var(--easing);
+}
+
+.nftImageBack {
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  transition: all var(--duration) var(--easing);
+  -webkit-transition: all var(--duration) var(--easing);
+}
+
+.nftImage {
+  -webkit-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+}
+.galleryCard .ant-card-bordered:hover .nftImage {
+  -webkit-transform: rotateY(0);
+  transform: rotateY(0);
+}
+
+.galleryCard .ant-card-bordered:hover .nftImageBack {
+  -webkit-transform: rotateY(-180deg);
+  transform: rotateY(-180deg);
+}
+
+.nftRight {
+  flex: 1;
+  padding: 0 4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
