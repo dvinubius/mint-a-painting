@@ -330,14 +330,13 @@ function App(props) {
   const [ipfsContent, setIpfsContent] = useState();
   const [transferToAddresses, setTransferToAddresses] = useState({});
   const [minting, setMinting] = useState(false);
-  const [count, setCount] = useState(1);
 
   const json = require("./artwork.json");
 
   const mintItem = async () => {
     // upload to ipfs
-    const uploaded = await ipfs.add(JSON.stringify(json[count]));
-    setCount(count + 1);
+    const id = Math.floor(Math.random() * json.length);
+    const uploaded = await ipfs.add(JSON.stringify(json[id]));
     console.log("Uploaded Hash: ", uploaded);
     const result = tx(
       writeContracts &&

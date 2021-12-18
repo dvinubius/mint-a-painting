@@ -10,6 +10,7 @@
 
 - Anyone can mint an NFT for free (gas fees only)
 - More assets included
+- Random index minting (no counter), duplicates still possible
 
 ---
 
